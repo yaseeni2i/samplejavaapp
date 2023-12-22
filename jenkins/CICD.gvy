@@ -62,7 +62,7 @@ pipeline {
         }
         stage('deploy-QA') {
 	         steps {
-                    sh script: 'ansible-playbook --inventory /tmp/myinv $WORKSPACE/deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
+                    sh script: 'ansible-playbook --inventory /tmp/inv $WORKSPACE/deploy/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
            }		
         }
     }
